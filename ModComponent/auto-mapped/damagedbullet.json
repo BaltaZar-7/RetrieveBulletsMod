@@ -1,0 +1,47 @@
+{
+  "ModGenericComponent": {
+    "DisplayNameLocalizationId": "GAMEPLAY_DamagedBullet",
+    "DescriptionLocalizatonId": "GAMEPLAY_DamagedBulletDescription",
+    "InventoryActionLocalizationId": "",
+    "WeightKG": 0.005,
+    "DaysToDecay": 0,
+    "MaxHP": 100.0,
+    "InitialCondition": "Perfect",
+    "InventoryCategory": "Tool",
+    "PickUpAudio": "Play_SndInvBullet",
+    "PutBackAudio": "Play_SndInvBullet",
+    "StowAudio": "Play_InventoryStow",
+    "WornOutAudio": "",
+    "InspectOnPickup": true,
+    "InspectDistance": 0.3,
+    "InspectAngles": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "InspectOffset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "InspectScale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "NormalModel": "GEAR_DamagedBullet",
+    "InspectModel": "GEAR_DamagedBullet"
+  },
+  "ModStackableBehaviour": {
+    "SingleUnitTextId": "Damaged Bullet",
+    "MultipleUnitTextId": "Damaged Bullets",
+    "StackSprite": "ico_units_ammo",
+    "UnitsPerItem": 1,
+    "ChanceFull": 0.0,
+    "ShareStackWithGear": [
+      "GEAR_DamagedBullet"
+    ],
+    "InstantiateStackItem": "GEAR_DamagedBullet",
+    "StackConditionDifferenceConstraint": 100.0
+  }
+}

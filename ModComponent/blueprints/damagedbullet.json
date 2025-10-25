@@ -1,0 +1,23 @@
+{
+  "Name": "Reforge Damaged Bullets",
+  "RequiredGear": [
+    {
+      "Item": "GEAR_DamagedBullet",
+      "Count": 1,
+      "Units": "Count"
+    }
+  ],
+  "RequiredPowder": [],
+  "RequiredLiquid": [],
+  "RequiredTool": "",
+  "OptionalTools": [],
+  "RequiredCraftingLocation": "AmmoWorkbench",
+  "RequiresLitFire": true,
+  "RequiresLight": false,
+  "CraftedResult": "GEAR_Bullet",
+  "CraftedResultCount": 1,
+  "DurationMinutes": 10,
+  "CraftingAudio": "Play_CraftingMetalAmmo",
+  "AppliedSkill": "Gunsmithing",
+  "ImprovedSkill": "Gunsmithing"
+}
