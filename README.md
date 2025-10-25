@@ -8,7 +8,7 @@ These two modcomponent files are almost identical, the AmmoTools version has plu
 # Installation
 Download and install dependancy mods AND its dependancies: Moddata, ModComponent  
 Download and place the dll file into your \Mods folder.  
-Download and place one of the modcomponent file into your \Mods folder.  
+Download and place one of the ModComponent files into your \Mods folder.  
 If you have AmmunitionCraftingTools installed, install the AmmoTools version. If not, the Main version.  
 # Thank you for downloading!
 Mod for The Long Dark game created by Hinterland Studios  
