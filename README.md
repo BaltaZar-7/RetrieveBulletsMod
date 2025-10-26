@@ -11,6 +11,7 @@ Download and place the dll file into your \Mods folder.
 Download and place one of the ModComponent files into your \Mods folder.  
 If you have AmmunitionCraftingTools installed, install the AmmoTools version. If not, the Main version.  
 # Thank you for downloading!
+Special thanks to Monsieurmeh, who helped me with some stuff!
 Mod for The Long Dark game created by Hinterland Studios  
 Modtemplate by Digitalzombie  
 Made by BaltaZar  
