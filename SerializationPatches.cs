@@ -1,6 +1,8 @@
-﻿using HarmonyLib;
+﻿#nullable disable
+
+using HarmonyLib;
 using MelonLoader;
-using MelonLoader.TinyJSON;
+using Newtonsoft.Json;
 using Il2Cpp;
 using System;
 using System.Collections.Generic;
@@ -42,14 +44,16 @@ namespace RetrieveBullets
         // ================================================================
         // Thread-safe TryGet / Remove
         // ================================================================
-        public static bool TryGetInfo(string guid, out BulletHitInfo? infoCopy)
+        public static bool TryGetInfo(string guid, out BulletHitInfo infoCopy)
         {
             infoCopy = null;
             if (string.IsNullOrEmpty(guid)) return false;
 
             lock (cacheLock)
             {
-                if (!cache.TryGetValue(guid, out BulletHitInfo? info)) return false;
+                BulletHitInfo info;
+                if (!cache.TryGetValue(guid, out info))
+                    return false;
 
                 infoCopy = new BulletHitInfo
                 {
@@ -77,7 +81,7 @@ namespace RetrieveBullets
             {
                 logger.Msg("[RetrieveBullets] OnLoadGame -> attempting to load ModData");
 
-                string? json = null;
+                string json = null;
                 try { json = sdm.Load(MODDATA_KEY); }
                 catch (Exception ex)
                 {
@@ -94,8 +98,11 @@ namespace RetrieveBullets
 
                 try
                 {
-                    var loaded = JSON.Load(json).Make<Dictionary<string, BulletHitInfo>>();
-                    lock (cacheLock) { cache = loaded ?? new Dictionary<string, BulletHitInfo>(); }
+                    Dictionary<string, BulletHitInfo> loaded = JsonConvert.DeserializeObject<Dictionary<string, BulletHitInfo>>(json);
+                    lock (cacheLock)
+                    {
+                        cache = loaded ?? new Dictionary<string, BulletHitInfo>();
+                    }
                     logger.Msg($"Loaded {cache.Count} bullet hit entries from ModData.");
                 }
                 catch (Exception ex)
@@ -119,7 +126,8 @@ namespace RetrieveBullets
                     snapshot = new Dictionary<string, BulletHitInfo>(cache);
                 }
 
-                sdm.Save(JSON.Dump(snapshot, EncodeOptions.NoTypeHints), MODDATA_KEY);
+                string json = JsonConvert.SerializeObject(snapshot);
+                sdm.Save(json, MODDATA_KEY);
             }
             catch (Exception ex)
             {

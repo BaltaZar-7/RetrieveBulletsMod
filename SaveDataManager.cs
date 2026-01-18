@@ -1,4 +1,6 @@
-﻿using ModData;
+﻿#nullable disable
+
+using ModData;
 
 namespace RetrieveBullets
 {
@@ -11,7 +13,7 @@ namespace RetrieveBullets
             return modData.Save(data, suffix);
         }
 
-        public string? Load(string suffix)
+        public string Load(string suffix)
         {
             return modData.Load(suffix);
         }
