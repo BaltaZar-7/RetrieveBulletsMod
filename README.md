@@ -17,3 +17,4 @@ Special thanks to Monsieurmeh, who helped me with some stuff!
 Mod for The Long Dark game created by Hinterland Studios  
 Modtemplate by Digitalzombie  
 Made by BaltaZar  
+[![Github All Releases](https://img.shields.io/github/downloads/BaltaZar-7/RetrieveBulletsMod/total.svg)]()
